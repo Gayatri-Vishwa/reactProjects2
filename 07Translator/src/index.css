@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Righteous&family=Russo+One&family=Shojumaru&display=swap");
+@import "tailwindcss";
+
+
+   /* TAILWIND V4 CUSTOM FONTS */
+
+@theme {
+  --font-russo: "Russo One", sans-serif;
+  --font-righteous: "Righteous", sans-serif;
+  --font-notojp: "Noto Sans JP", sans-serif;
+  --font-shojumaru: "Shojumaru", cursive;
+}
+
+* {
+  outline: none;
+}
+
+html,
+body,
+#root {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+
+  /* Default font applied */
+  font-family: var(--font-russo);
+}
+
+#root {
+  @apply flex justify-center items-center bg-gradient-to-l from-[#b6f492] to-[#338b93];
+}
+
+.language {
+  @apply text-sm sm:text-lg text-right uppercase cursor-pointer;
+}
+
+.textarea {
+  @apply 
+    w-full 
+    h-48 
+    max-[392px]:h-44 
+    max-[392px]:text-sm 
+    resize-none 
+    bg-[#151515] 
+    shadow-md 
+    shadow-black 
+    rounded-lg 
+    px-4 
+    py-2 
+    font-righteous 
+    font-light 
+    leading-5;
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari */
+  }
+}
